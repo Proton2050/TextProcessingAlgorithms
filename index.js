@@ -39,8 +39,8 @@
 // }
 
 // const aboutCats = about(["cat", "kitten", "cats"]);
-// console.log(aboutCats("The quick brown fox jumps over the lazy dog.")); 
-// console.log(aboutCats("The quick brown cat jumps over the lazy dog.")); 
+// console.log(aboutCats("The quick brown fox jumps over the lazy dog."));
+// console.log(aboutCats("The quick brown cat jumps over the lazy dog."));
 
 // ------------------------Get Relevant Sentences----------------------------
 // getRelevantSentences(criteriaFn, sentences) takes an array of sentences and returns only the sentences that meet certain criteria, which is determined by criteriaFn.
@@ -54,7 +54,7 @@
 //         // If criteria is met return sentence
 //         if (criteriaFn(sentence)) {
 //             answer.push(sentence);
-//         } 
+//         }
 //     }
 
 //     return answer;
@@ -73,12 +73,30 @@
 // -------------------Get Length Distance-------------------------------------------------
 // getLengthDistance(s1, s2) returns the absolute difference in length between strings s1 and s2.
 
-// const getLengthDistance = (s1, s2) => {
-//     return Math.abs(s1.length - s2.length);
-// }
+const getLengthDistance = (s1, s2) => {
+  return Math.abs(s1.length - s2.length);
+};
 
 // console.log(getLengthDistance("goat", "whale")); // 1
 // console.log(getLengthDistance("goat", "boat")); // 0
 // console.log(getLengthDistance("whale", "goat")); // 1
 
 // -----------------------Get Closest in Length-------------------------------------------------
+
+const getClosestInLength = (words, word, limit) => {
+  let answer = 0;
+  for (i = 0; i < words.length; i++) {
+    let thisWord = words[i];
+  }
+  if (getLengthDistance(thisWord, word) > answer) {
+    answer = thisWord;
+  }
+  return answer;
+  getLengthDistance(str, word) < limit;
+};
+
+// getClosestInLength(words, word, limit) will calculate the difference between the length of each word in words and the length of word and return the word with the minimum difference, unless that difference is greater than the limit, in which case word will be returned.
+
+// const words = ["hello", "bye", "goodbye"];
+// getClosestInLength(words, "hi", 3); // "bye"
+// getClosestInLength(words, "hi", 0); // "hi"
