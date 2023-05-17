@@ -97,10 +97,24 @@ const getClosestInLength = (words, word, limit) => {
   } else return answer;
 }
 
-// getClosestInLength(words, word, limit) will calculate the difference between the length of each word in words and the length of word and return the word with the minimum difference, unless that difference is greater than the limit, in which case word will be returned.
+// getClosestInLength(words, word, limit) will calculate the difference between the 
+// length of each word in words and the length of word and return the word with the minimum difference, unless that 
+// difference is greater than the limit, in which case word will be returned.
 
 const words = ["hello", "bye", "goodbye"];
 console.log(getClosestInLength(words, "hi", 3)); // "bye"
 console.log(getClosestInLength(words, "hi", 0)); // "hi"
 
 // ------------------------------------------Get Closest Word-----------------------------------
+// getClosestWord(words, word, distanceFn, limit) returns the closest word in words to the given word, 
+// where the distance between two words is calculated using the given distanceFn, unless the minimum distance 
+// is greater than the limit, in which case word will be returned.
+
+const distanceFn = getClosestInLength();
+const getClosestWord = (words, word, distanceFn, limit) => {
+  for (const element in words)
+}
+
+const words = ["bridge", "river", "bed", "fence"];
+getClosestWord(words, "bye", getEditDistance, 10); // "bed"
+getClosestWord(words, "plank", getEditDistance, 2); // "plank"
